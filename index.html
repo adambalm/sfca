@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World - GitHub Pages</title>
+    <title>GitHub Pages Capabilities Showcase</title>
     <style>
         * {
             margin: 0;
@@ -11,70 +11,522 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f5f5f5;
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --border: #e2e8f0;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* Header */
+        header {
+            background: var(--accent);
             color: white;
-        }
-
-        .container {
+            padding: 2rem 1rem;
             text-align: center;
-            padding: 2rem;
-            animation: fadeIn 1s ease-in;
+            box-shadow: var(--card-shadow);
         }
 
-        h1 {
-            font-size: 4rem;
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        /* Theme Switcher */
+        .theme-switcher {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .theme-switcher h3 {
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: var(--text-primary);
         }
 
-        p {
-            font-size: 1.5rem;
-            opacity: 0.9;
+        .theme-buttons {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .theme-btn {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--border);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .theme-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .theme-btn.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-bottom: 2rem;
         }
 
-        .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            backdrop-filter: blur(10px);
-            font-size: 0.9rem;
-            margin-top: 1rem;
+        /* Cards */
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
         }
 
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Icons */
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Interactive Demo Section */
+        .demo-section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 2px solid var(--border);
+        }
+
+        .demo-section h2 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        /* Interactive Button Demo */
+        .interactive-demo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 2rem;
+            background: var(--bg-primary);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .demo-btn {
+            padding: 1rem 2rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .demo-btn:hover {
+            background: var(--accent-hover);
+            transform: scale(1.05);
+        }
+
+        .demo-btn:active {
+            transform: scale(0.95);
+        }
+
+        .counter-display {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        /* Animation Demo */
+        .animation-box {
+            width: 100px;
+            height: 100px;
+            background: var(--accent);
+            border-radius: 12px;
+            margin: 2rem auto;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .limitations li::before {
+            content: "✗";
+            color: #ef4444;
+        }
+
+        /* Code Block */
+        code {
+            background: var(--bg-secondary);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 2px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
+            header h1 {
+                font-size: 1.8rem;
             }
-            p {
-                font-size: 1.2rem;
+
+            .grid {
+                grid-template-columns: 1fr;
             }
+        }
+
+        /* Theme Variations */
+        body.dark {
+            --bg-primary: #1a202c;
+            --bg-secondary: #2d3748;
+            --text-primary: #f7fafc;
+            --text-secondary: #e2e8f0;
+            --accent: #60a5fa;
+            --accent-hover: #3b82f6;
+            --border: #4a5568;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        body.minimal {
+            --bg-primary: #fafafa;
+            --bg-secondary: #ffffff;
+            --text-primary: #000000;
+            --text-secondary: #404040;
+            --accent: #000000;
+            --accent-hover: #404040;
+            --border: #d4d4d4;
+        }
+
+        body.nature {
+            --bg-primary: #f0fdf4;
+            --bg-secondary: #dcfce7;
+            --text-primary: #14532d;
+            --text-secondary: #166534;
+            --accent: #16a34a;
+            --accent-hover: #15803d;
+            --border: #bbf7d0;
+        }
+
+        body.ocean {
+            --bg-primary: #f0f9ff;
+            --bg-secondary: #e0f2fe;
+            --text-primary: #0c4a6e;
+            --text-secondary: #075985;
+            --accent: #0284c7;
+            --accent-hover: #0369a1;
+            --border: #bae6fd;
+        }
+
+        body.sunset {
+            --bg-primary: #fef3c7;
+            --bg-secondary: #fde68a;
+            --text-primary: #78350f;
+            --text-secondary: #92400e;
+            --accent: #f59e0b;
+            --accent-hover: #d97706;
+            --border: #fcd34d;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello World!</h1>
-        <p>Your GitHub Pages site is live</p>
-        <div class="badge">Powered by GitHub Pages</div>
+    <header>
+        <h1>🚀 GitHub Pages Capabilities Showcase</h1>
+        <p>Exploring what's possible with static sites</p>
+    </header>
+
+    <div class="theme-switcher">
+        <h3>🎨 Try Different Themes (Click to Switch)</h3>
+        <div class="theme-buttons">
+            <button class="theme-btn active" onclick="setTheme('light')">Light</button>
+            <button class="theme-btn" onclick="setTheme('dark')">Dark</button>
+            <button class="theme-btn" onclick="setTheme('minimal')">Minimal</button>
+            <button class="theme-btn" onclick="setTheme('nature')">Nature</button>
+            <button class="theme-btn" onclick="setTheme('ocean')">Ocean</button>
+            <button class="theme-btn" onclick="setTheme('sunset')">Sunset</button>
+        </div>
     </div>
+
+    <div class="container">
+        <!-- Interactive Demo -->
+        <div class="demo-section">
+            <h2>🎮 Interactive Demo - Click Counter</h2>
+            <div class="interactive-demo">
+                <p>This demonstrates JavaScript interactivity on GitHub Pages</p>
+                <div class="counter-display" id="counter">0</div>
+                <button class="demo-btn" onclick="incrementCounter()">Click Me!</button>
+                <button class="demo-btn" style="background: #6b7280;" onclick="resetCounter()">Reset</button>
+            </div>
+        </div>
+
+        <!-- Animation Demo -->
+        <div class="demo-section">
+            <h2>✨ CSS Animations</h2>
+            <p style="text-align: center; margin-bottom: 1rem;">This box floats using pure CSS animations</p>
+            <div class="animation-box"></div>
+        </div>
+
+        <!-- Capabilities Grid -->
+        <h2 style="text-align: center; margin: 3rem 0 2rem; color: var(--accent); font-size: 2rem;">✅ What GitHub Pages CAN Do</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="icon">🎨</div>
+                <h3>Modern CSS</h3>
+                <p>Full support for:</p>
+                <ul>
+                    <li>CSS Grid & Flexbox</li>
+                    <li>Animations & Transitions</li>
+                    <li>CSS Variables</li>
+                    <li>Tailwind, Bootstrap, etc.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="icon">⚡</div>
+                <h3>JavaScript Frameworks</h3>
+                <p>Build with popular frameworks:</p>
+                <ul>
+                    <li>React, Vue, Angular</li>
+                    <li>Svelte, Next.js (static)</li>
+                    <li>Three.js, D3.js</li>
+                    <li>Any client-side library</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌐</div>
+                <h3>API Integration</h3>
+                <p>Connect to external services:</p>
+                <ul>
+                    <li>REST APIs</li>
+                    <li>GraphQL</li>
+                    <li>Third-party services</li>
+                    <li>CDN resources</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="icon">📱</div>
+                <h3>Responsive Design</h3>
+                <p>Build for all devices:</p>
+                <ul>
+                    <li>Mobile-first design</li>
+                    <li>Media queries</li>
+                    <li>Progressive Web Apps</li>
+                    <li>Touch interactions</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎮</div>
+                <h3>Interactive Content</h3>
+                <p>Create rich experiences:</p>
+                <ul>
+                    <li>Games & visualizations</li>
+                    <li>Form validation</li>
+                    <li>Local storage</li>
+                    <li>WebGL & Canvas</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔧</div>
+                <h3>Modern Tools</h3>
+                <p>Use any build tools:</p>
+                <ul>
+                    <li>Vite, Webpack, Parcel</li>
+                    <li>TypeScript</li>
+                    <li>Sass, PostCSS</li>
+                    <li>Deploy the build output</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Limitations -->
+        <h2 style="text-align: center; margin: 3rem 0 2rem; color: #ef4444; font-size: 2rem;">❌ What GitHub Pages CANNOT Do</h2>
+        <div class="demo-section">
+            <div class="grid">
+                <div>
+                    <h3 style="color: #ef4444;">Server-Side Processing</h3>
+                    <ul class="limitations">
+                        <li>No Node.js, Python, PHP backends</li>
+                        <li>No server-side rendering (SSR)</li>
+                        <li>No databases on GitHub Pages</li>
+                        <li>No file uploads to server</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #ef4444;">Workarounds Available</h3>
+                    <ul>
+                        <li>Use Firebase/Supabase for databases</li>
+                        <li>Auth0/Firebase for authentication</li>
+                        <li>External APIs for backend logic</li>
+                        <li>Netlify/Vercel for serverless functions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Real Use Cases -->
+        <h2 style="text-align: center; margin: 3rem 0 2rem; color: var(--accent); font-size: 2rem;">💡 Perfect For</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>📚 Documentation Sites</h3>
+                <p>Project docs, APIs, guides with search and navigation</p>
+            </div>
+            <div class="card">
+                <h3>🎨 Portfolios</h3>
+                <p>Showcase your work with galleries, animations, and interactive elements</p>
+            </div>
+            <div class="card">
+                <h3>🛠️ Tools & Calculators</h3>
+                <p>Client-side utilities, converters, generators</p>
+            </div>
+            <div class="card">
+                <h3>📊 Data Visualizations</h3>
+                <p>Interactive charts, graphs, and dashboards using D3.js or Chart.js</p>
+            </div>
+            <div class="card">
+                <h3>🎮 Browser Games</h3>
+                <p>HTML5 games, simulations, educational apps</p>
+            </div>
+            <div class="card">
+                <h3>📝 Blogs & Landing Pages</h3>
+                <p>Static blogs (with Jekyll) or marketing pages</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>This entire site runs on GitHub Pages - no server required!</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Built with vanilla HTML, CSS, and JavaScript</p>
+    </footer>
+
+    <script>
+        let count = 0;
+
+        function incrementCounter() {
+            count++;
+            document.getElementById('counter').textContent = count;
+        }
+
+        function resetCounter() {
+            count = 0;
+            document.getElementById('counter').textContent = count;
+        }
+
+        function setTheme(theme) {
+            // Remove all theme classes
+            document.body.className = theme === 'light' ? '' : theme;
+
+            // Update active button
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Save preference
+            localStorage.setItem('theme', theme);
+        }
+
+        // Load saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme !== 'light') {
+                document.body.className = savedTheme;
+                document.querySelectorAll('.theme-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.textContent.toLowerCase() === savedTheme) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
