@@ -60,12 +60,72 @@
             }
         }
 
+        .quick-links {
+            margin-top: 4rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .quick-links h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        .link-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .link-card:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .link-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .link-card .title {
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.5rem;
             }
             p {
                 font-size: 1.2rem;
+            }
+            .links-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+            .quick-links {
+                margin-top: 3rem;
             }
         }
     </style>
@@ -75,6 +135,36 @@
         <h1>Hello World!</h1>
         <p>Your GitHub Pages site is live</p>
         <div class="badge">Powered by GitHub Pages</div>
+
+        <div class="quick-links">
+            <h2>Quick Links</h2>
+            <div class="links-grid">
+                <a href="https://classroom.google.com/" class="link-card" target="_blank" rel="noopener noreferrer">
+                    <div class="icon">📚</div>
+                    <div class="title">Google Classroom</div>
+                </a>
+                <a href="https://drive.google.com/drive/u/0/home" class="link-card" target="_blank" rel="noopener noreferrer">
+                    <div class="icon">📁</div>
+                    <div class="title">Google Drive</div>
+                </a>
+                <a href="https://docs.google.com/document/u/0/?tgif=d" class="link-card" target="_blank" rel="noopener noreferrer">
+                    <div class="icon">📄</div>
+                    <div class="title">Google Docs</div>
+                </a>
+                <a href="https://gemini.google.com/" class="link-card" target="_blank" rel="noopener noreferrer">
+                    <div class="icon">✨</div>
+                    <div class="title">Gemini</div>
+                </a>
+                <a href="https://notebooklm.google/" class="link-card" target="_blank" rel="noopener noreferrer">
+                    <div class="icon">📓</div>
+                    <div class="title">NotebookLM</div>
+                </a>
+                <a href="https://secure.gradelink.com/lkg/Gradelink.xml?contenttype=text%2Fhtml&Language=English&v=1.0" class="link-card" target="_blank" rel="noopener noreferrer">
+                    <div class="icon">📊</div>
+                    <div class="title">Gradelink</div>
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
